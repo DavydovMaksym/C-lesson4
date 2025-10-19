@@ -8,26 +8,6 @@ namespace C_lesson4._2
 {
     internal class C_lesson4_2
     {
-        static void Main()
-        {
-            Console.WriteLine("Enter a binary number (only 0s and 1s):");
-            string input = Console.ReadLine();
-
-            try
-            {
-                int number = ConvertBinaryToInt(input);
-                Console.WriteLine("Decimal value: " + number);
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("Error: the number is out of the range of type int.");
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Error: invalid input. Enter only 0s and 1s.");
-            }
-        }
-
         static int ConvertBinaryToInt(string binary)
         {
             if (string.IsNullOrEmpty(binary))
@@ -56,6 +36,26 @@ namespace C_lesson4._2
             }
 
             return result;
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("Enter a binary number (only 0s and 1s):");
+            string input = Console.ReadLine();
+
+            try
+            {
+                int number = ConvertBinaryToInt(input);
+                Console.WriteLine("Decimal value: " + number);
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Error: the number is out of the range of type int.");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: invalid input. Enter only 0s and 1s.");
+            }
         }
     }
 }
