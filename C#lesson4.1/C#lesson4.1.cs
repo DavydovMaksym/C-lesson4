@@ -8,26 +8,6 @@ namespace C_lesson4._1
 {
     internal class C_lesson4_1
     {
-        static void Main()
-        {
-            Console.WriteLine("Enter a number as a string:");
-            string input = Console.ReadLine();
-
-            try
-            {
-                int number = ConvertStringToInt(input);
-                Console.WriteLine("Converted number: " + number);
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("Error: the number is out of the range of type int.");
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Error: invalid input. Please enter only digits.");
-            }
-        }
-
         static int ConvertStringToInt(string str)
         {
             if (string.IsNullOrEmpty(str))
@@ -78,6 +58,26 @@ namespace C_lesson4._1
             }
 
             return result;
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("Enter a number as a string:");
+            string input = Console.ReadLine();
+
+            try
+            {
+                int number = ConvertStringToInt(input);
+                Console.WriteLine("Converted number: " + number);
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Error: the number is out of the range of type int.");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: invalid input. Please enter only digits.");
+            }
         }
     }
 }
